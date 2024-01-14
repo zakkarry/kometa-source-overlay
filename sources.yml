@@ -1,0 +1,174 @@
+templates:
+  rip_source:
+    optional:
+      - overlay_level
+    default_percent: 45
+    default:
+      overlay: <<overlay_name>>
+      horizontal_offset: 15
+      horizontal_align: left
+      vertical_offset: 15
+      vertical_align: top
+      back_color: "#00000099"
+      back_width: 325
+      back_height: 130
+      font: fonts/Inter-Medium.ttf
+      font_size: 55
+      font_color: "#FFFFFF"
+      back_radius: 30
+      weight_<<key>>: <<weight>>
+    builder_level: <<overlay_level>>
+    ignore_blank_results: true
+    plex_all: true
+    filters:
+      filepath.regex: <<regex>>
+    overlay:
+      name: <<overlay_name>>
+      file: /config/sources/<<overlay>>.png
+      back_color: <<back_color>>
+      back_width: <<back_width>>
+      back_height: <<back_height>>
+      group: sources
+      font: <<font>>
+      font_size: <<font_size>>
+      font_color: <<font_color>>
+      back_radius: <<back_radius>>
+
+      horizontal_offset: <<horizontal_offset>>
+      horizontal_align: <<horizontal_align>>
+      vertical_offset: <<vertical_offset>>
+      vertical_align: <<vertical_align>>
+      weight: <<weight_<<key>>>>
+###################################################################
+overlays:
+  BluRay:
+    template:
+      - name: rip_source
+        weight: 1800
+        back_height: 105
+        horizontal_offset: 0
+        back_width: 345
+        vertical_offset: 20
+        regex: '(?i)\b(BluRay|BDRip|Blu-Ray)\b'
+  DVD:
+    template:
+      - name: rip_source
+        weight: 200
+        back_width: 285
+        regex: '(?i)\bDVD\b'
+  AppleTV:
+    template:
+      - name: rip_source
+        back_width: 305
+        weight: 1500
+        regex: '(?i)\b(atvp|aptv|Apple TV\+)\b'
+  BBC:
+    template:
+      - name: rip_source
+        weight: 450
+        back_width: 300
+        regex: '(?i)\b(BBC|IP)\b'
+  Canal+:
+    template:
+      - name: rip_source
+        weight: 1000
+        regex: '(?i)\b(C(ANAL)?[ .]?(\+|Plus))\b'
+  Comedy Central:
+    template:
+      - name: rip_source
+        back_width: 305
+        weight: 600
+        regex: '(?i)\b(CC)\b.+web[ ._-]?(dl|rip)?\b'
+  Discovery+:
+    template:
+      - name: rip_source
+        weight: 450
+        regex: '(?i)\b(DISC|DSC)\b'
+  Disney+:
+    template:
+      - name: rip_source
+        weight: 1450
+        regex: '(?i)\b(dsnp|dsny|disney|Disney\+)\b'
+  HBO:
+    template:
+      - name: rip_source
+        back_width: 305
+        weight: 1350
+        regex: '(?i)\b(hbo)(?![ ._-]max)\b.+\bweb[ ._-]?(dl|rip)?\b'
+  HBO Max:
+    template:
+      - name: rip_source
+        weight: 1360
+        back_height: 110
+        back_width: 330
+        regex: '(?i)\b(hmax|hbom|hbo[ ._-]max)\b.+\bweb[ ._-]?(dl|rip)?\b'
+  Hulu:
+    template:
+      - name: rip_source
+        weight: 1430
+        regex: '(?i)\b(hulu)\b'
+  MoviesAnywhere:
+    template:
+      - name: rip_source
+        back_width: 310
+        weight: 1899
+        horizontal_offset: 30
+        regex: '(?i)\b(ma)\b.+\bweb[ ._-]?(dl|rip)?\b'
+  Max:
+    template:
+      - name: rip_source
+        weight: 1370
+        regex: '(?i)\b(?<!hbo[ ._-])max\b.+\bweb[ ._-]?(dl|rip)?\b'
+  Netflix:
+    template:
+      - name: rip_source
+        weight: 1400
+        back_height: 135
+        back_width: 320
+        regex: '(?i)\b(nf|netflix)\b'
+  Paramount+:
+    template:
+      - name: rip_source
+        weight: 1300
+        horizontal_offset: 0
+        back_width: 347
+        back_height: 115
+        regex: '(?i)\b(pmtp|Paramount\+)\b'
+  Peacock:
+    template:
+      - name: rip_source
+        weight: 1375
+        regex: '(?i)\b(pcok|Peacock)\b'
+  Prime:
+    template:
+      - name: rip_source
+        weight: 1600
+        vertical_offset: 15
+        back_height: 120
+        back_width: 315
+        regex: '(?i)\b(amzn|amazon)\b'
+  Showtime:
+    template:
+      - name: rip_source
+        weight: 1325
+        back_width: 300
+        regex: '(?i)\b(sho|showtime)\b'
+  STAN:
+    template:
+      - name: rip_source
+        weight: 1425
+        regex: '(?i)\b(stan)\b'
+  WEB:
+    template:
+      - name: rip_source
+        back_width: 175
+        horizontal_offset: 50
+        weight: 90
+        regex: '(?i)^(?!.*(amzn|amazon|atvp|aptv|Apple TV|BBC|iP|Canal|hulu|CC|DISC|DSC|dsnp|dsny|disney|hbo|h?max|ma|nf|netflix|P(ea)?co(c)?k|sho|stan)\b).*\bWEB[ _-]?(DL|Rip)?'
+  HDTV:
+    template:
+      - name: rip_source
+        back_width: 175
+        horizontal_offset: 50
+        weight: 80
+        regex: '(?i)\b(hdtv)\b'
