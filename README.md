@@ -1,6 +1,7 @@
-![](./img/logo.png)
+## ![](./img/kometa.png)
 
-Add the following to the libraries you want to use this. By default, it will place the source from TRaSH naming scheme in top left.
+<hr>
+Add the following to the libraries you want to use this overlay. By default, it will place the source from TRaSH naming scheme in top left.
 
     overlay_path:
     - file: /config/sources.yml
@@ -20,4 +21,5 @@ Example images from my library - Please note I have a few extra TV sources that 
 
 ![](./example/movie_example.png)
 
+<hr>
 Thanks to bullmoose, anonfawkes, Mr. Carrot, Yozora, and the PMM Team and Discord in general, for PNGs and for helping me.
